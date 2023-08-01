@@ -1,27 +1,24 @@
-import os
-
 from aiogoogle import Aiogoogle
 from aiogoogle.auth.creds import ServiceAccountCreds
-from dotenv import load_dotenv
 
+from app.core.config import settings
 
-load_dotenv()
 
 SCOPES = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive",
 ]
 INFO = {
-    "type": os.environ["TYPE"],
-    "project_id": os.environ["PROJECT_ID"],
-    "private_key_id": os.environ["PRIVATE_KEY_ID"],
-    "private_key": os.environ["PRIVATE_KEY"].replace("\\n", "\n"),
-    "client_email": os.environ["CLIENT_EMAIL"],
-    "client_id": os.environ["CLIENT_ID"],
-    "auth_uri": os.environ["AUTH_URI"],
-    "token_uri": os.environ["TOKEN_URI"],
-    "auth_provider_x509_cert_url": os.environ["AUTH_PROVIDER_X509_CERT_URL"],
-    "client_x509_cert_url": os.environ["CLIENT_X509_CERT_URL"],
+    'type': settings.type,
+    'project_id': settings.project_id,
+    'private_key_id': settings.private_key_id,
+    'private_key': settings.private_key.replace('\\n', '\n'),
+    'client_email': settings.client_email,
+    'client_id': settings.client_id,
+    'auth_uri': settings.auth_uri,
+    'token_uri': settings.token_uri,
+    'auth_provider_x509_cert_url': settings.auth_provider_x509_cert_url,
+    'client_x509_cert_url': settings.client_x509_cert_url
 }
 cred = ServiceAccountCreds(scopes=SCOPES, **INFO)
 

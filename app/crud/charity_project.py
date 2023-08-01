@@ -1,7 +1,7 @@
 # from app.core.db import AsyncSessionLocal
-from typing import Dict, List, Optional
+from typing import List, Optional
 
-from sqlalchemy import extract, select
+from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.crud.base import CRUDBase

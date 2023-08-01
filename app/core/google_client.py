@@ -4,7 +4,6 @@ from aiogoogle import Aiogoogle
 from aiogoogle.auth.creds import ServiceAccountCreds
 from dotenv import load_dotenv
 
-from app.core.config import settings
 
 load_dotenv()
 

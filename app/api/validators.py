@@ -44,7 +44,7 @@ async def check_full_amount_befor_edit_project(
     obj_in: CharityProjectUpdate,
     session: AsyncSession,
 ):
-    """Проверка суммы инвестирования при корректировке проекта."""
+    """Проверка сумму инвестирования при корректировке проекта."""
 
     charity_project = await charity_project_crud.get_charity_project_by_id(
         project_id, session
@@ -60,7 +60,7 @@ async def check_the_project_is_closed(
     project_id: int,
     session: AsyncSession,
 ):
-    """Проверяем закрыт ли проект."""
+    """Проверка закрыт ли проект."""
     charity_project = await charity_project_crud.get_charity_project_by_id(
         project_id, session
     )
@@ -75,6 +75,8 @@ async def check_invested_amount(
     project_id: int,
     session: AsyncSession,
 ):
+    """Проверка были ли внесены средства в проект."""
+
     charity_project = await charity_project_crud.get_charity_project_by_id(
         project_id, session
     )

@@ -35,8 +35,10 @@ async def create_donation(
 async def get_all_donations(
     session: AsyncSession = Depends(get_async_session),
 ):
-    """Только для суперюзеров."""
-    """Обработка запроса на получение списка всех донатов."""
+    """
+    Только для суперюзеров.
+    Обработка запроса на получение списка всех донатов.
+    """
 
     all_donations = await donation_crud.get_multi(session)
     return all_donations

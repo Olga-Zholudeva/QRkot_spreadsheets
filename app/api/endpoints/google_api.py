@@ -22,7 +22,10 @@ async def get_report(
     session: AsyncSession = Depends(get_async_session),
     wrapper_services: Aiogoogle = Depends(get_service),
 ):
-    """Только для суперюзеров."""
+    """
+    Только для суперюзеров.
+    Обработка запроса на формирование таблицы со сроками закрытия проектов.
+    """
 
     close_projects = await charity_project_crud.get_projects_by_completion_rate(session)
     spreadsheetid = await spreadsheets_create(wrapper_services)

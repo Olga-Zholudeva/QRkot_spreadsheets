@@ -1,4 +1,3 @@
-# from app.core.db import AsyncSessionLocal
 from typing import List, Optional
 
 from sqlalchemy import select

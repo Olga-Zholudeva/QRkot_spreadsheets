@@ -1,3 +1,4 @@
+import logging
 from typing import Optional, Union
 
 from fastapi import Depends, Request
@@ -20,6 +21,10 @@ from app.core.constants import LIFETIME_SECONDS
 from app.core.db import get_async_session
 from app.models.user import User
 from app.schemas.user import UserCreate
+
+logging.basicConfig(
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
+)
 
 
 async def get_user_db(session: AsyncSession = Depends(get_async_session)):
@@ -54,7 +59,7 @@ class UserManager(IntegerIDMixin, BaseUserManager[User, int]):
             raise InvalidPasswordException(reason="Password should not contain e-mail")
 
     async def on_after_register(self, user: User, request: Optional[Request] = None):
-        print(f"Пользователь {user.email} зарегистрирован.")
+        logging.info(f"Пользователь {user.email} зарегистрирован.")
 
 
 async def get_user_manager(user_db=Depends(get_user_db)):

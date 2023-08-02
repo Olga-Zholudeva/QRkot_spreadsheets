@@ -15,10 +15,10 @@
 
 ## Запуск проекта:
 
-- Клонируем репозиторий: git clone [Приложение QRKot](https://github.com/Olga-Zholudeva/cat_charity_fund)
-- Cоздаем и активировируем виртуальное окружение: python3 -m venv env source env/bin/activate
-- Устанавливаем зависимости из файла requirements.txt: pip install -r requirements.txt
-- Запустить проект uvicorn app.main:app --reload
+- Клонируем репозиторий: **git clone [Приложение QRKot](https://github.com/Olga-Zholudeva/cat_charity_fund)**
+- Cоздаем и активировируем виртуальное окружение: **python3 -m venv env source env/bin/activate**
+- Устанавливаем зависимости из файла requirements.txt: **pip install -r requirements.txt**
+- Запустить проект: **uvicorn app.main:app --reload**
 
 ## Действия пользователей:
 

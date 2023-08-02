@@ -6,6 +6,10 @@ from app.core.config import settings
 
 
 class PreBase:
+    """
+    Формируем название таблиц и добавляем всем таблицам поле id.
+    """
+
     @declared_attr
     def __tablename__(cls):
         return cls.__name__.lower()
@@ -19,5 +23,7 @@ AsyncSessionLocal = sessionmaker(engine, class_=AsyncSession)
 
 
 async def get_async_session():
+    """Создаем ассинхронную сессию."""
+
     async with AsyncSessionLocal() as async_session:
         yield async_session

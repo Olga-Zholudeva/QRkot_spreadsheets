@@ -12,6 +12,9 @@
 - Alembic
 - Google Sheets API
 - Google Drive API
+- uvicorn 0.17.6
+- aiohttp 0.8.0
+
 
 ## Запуск проекта:
 
@@ -19,6 +22,8 @@
 - Cоздаем и активировируем виртуальное окружение: **python3 -m venv env source env/bin/activate**
 - Устанавливаем зависимости из файла requirements.txt: **pip install -r requirements.txt**
 - Запустить проект: **uvicorn app.main:app --reload**
+- Документаци по проекту доступна по адресу: **http://localhost:8000/docs**
+- Запросы к API можно отправлять, например, через Postman
 
 ## Действия пользователей:
 
@@ -29,6 +34,14 @@
 ## Дополнительная возможность приложения:
 
 Можно сформировать отчет в формате Google Таблиц. Отчет отображает длительность сбора средств для каждого закрытого проекта. С его помощью можно оценить эффективность сбора пожертвований и уделить больше внимания долгим проектам.
+
+<details open>
+
+  <summary>click to collapse</summary>
+
+  this one starts expanded because of the "open"
+
+</details>
 
 
 ## Проект выполнен:
